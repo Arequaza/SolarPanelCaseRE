@@ -3,8 +3,6 @@ package re.project.solarpanel;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
 
 public class QuotationCreationController {
@@ -24,9 +22,8 @@ public class QuotationCreationController {
     public Text vatPrice;
     public Text totalIncludingVatPrice;
     public Text estimatedEnergyProduction;
-    public FlowPane quotationCreationScreen;
 
-    public void calcButtonPress(MouseEvent mouseEvent) {
+    public void calcButtonPress() {
         if (amountSolarPanelsInput.getText().isEmpty()) {
 
         } else {

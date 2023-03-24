@@ -1,145 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Text?>
 
 
-<TabPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="re.project.solarpanel.HelloController">
-   <tabs>
-      <Tab text="Untitled Tab" />
-      <Tab text="QuotationCreationTab">
-         <content>
-            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="689.0">
-               <top>
-                   <GridPane alignment="CENTER" prefHeight="140.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-                       <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="463.0" minWidth="10.0" prefWidth="28.333314895629883" />
-                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="463.0" minWidth="10.0" prefWidth="229.66668510437012" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="43.333333333333314" />
-                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="283.3333333333333" />
-                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="340.0" minWidth="10.0" prefWidth="171.0" />
-                       </columnConstraints>
-                       <rowConstraints>
-                           <RowConstraints maxHeight="30.0" minHeight="2.0" prefHeight="5.0" vgrow="SOMETIMES" />
-                           <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="65.33333333333333" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="28.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
-                       </rowConstraints>
-                       <Button fx:id="calcButton" mnemonicParsing="false" onMouseClicked="#calcButtonPress" prefHeight="40.0" prefWidth="103.0" text="Calculate" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                       <GridPane prefHeight="57.0" prefWidth="215.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                           <columnConstraints>
-                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="213.0000023841858" minWidth="10.0" prefWidth="208.00000286102295" />
-                           </columnConstraints>
-                           <rowConstraints>
-                               <RowConstraints maxHeight="27.999998092651367" minHeight="10.0" prefHeight="20.333333333333332" vgrow="SOMETIMES" />
-                               <RowConstraints maxHeight="45.33333333333334" minHeight="10.0" prefHeight="44.33333333333334" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <TextField fx:id="roofAreaInput" alignment="TOP_LEFT" prefHeight="25.0" prefWidth="229.0" GridPane.rowIndex="1" />
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Roof Area" />
-                       </GridPane>
-                       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
-                           <columnConstraints>
-                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                               <RowConstraints maxHeight="27.000001907348633" minHeight="10.0" prefHeight="23.000001907348633" vgrow="SOMETIMES" />
-                               <RowConstraints maxHeight="40.99999809265137" minHeight="10.0" prefHeight="40.99999809265137" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Consumption" wrappingWidth="105.13672065734863" />
-                           <TextField fx:id="consumptionInput" prefHeight="25.0" prefWidth="207.0" GridPane.rowIndex="1" />
-                       </GridPane>
-                       <GridPane GridPane.columnIndex="3" GridPane.rowIndex="1">
-                           <columnConstraints>
-                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="222.0" minWidth="10.0" prefWidth="222.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                               <RowConstraints maxHeight="27.999998092651367" minHeight="10.0" prefHeight="23.999998092651367" vgrow="SOMETIMES" />
-                               <RowConstraints maxHeight="42.00000190734863" minHeight="10.0" prefHeight="42.00000190734863" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <TextField fx:id="amountSolarPanelsInput" text="5" GridPane.rowIndex="1" />
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Amount of Solar Panels" wrappingWidth="130.1367244720459" />
-                       </GridPane>
-                     <CheckBox fx:id="meterAdjustmentCheckBox" mnemonicParsing="false" prefHeight="17.0" prefWidth="153.0" text="Meter Adjustment" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                   </GridPane>
-               </top>
-               <center>
-                   <GridPane prefWidth="689.0" BorderPane.alignment="CENTER">
-                       <columnConstraints>
-                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="394.0" minWidth="10.0" prefWidth="394.0" />
-                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="206.0" />
-                       </columnConstraints>
-                       <rowConstraints>
-                           <RowConstraints maxHeight="189.33333333333334" minHeight="10.0" prefHeight="12.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="189.33333333333334" minHeight="6.0" prefHeight="6.0" vgrow="SOMETIMES" />
-                           <RowConstraints maxHeight="222.33333333333334" minHeight="10.0" prefHeight="216.66666666666666" vgrow="SOMETIMES" />
-                           <RowConstraints maxHeight="132.0" minHeight="10.0" prefHeight="70.33333333333334" vgrow="SOMETIMES" />
-                       </rowConstraints>
-                       <GridPane GridPane.rowIndex="2">
-                           <columnConstraints>
-                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="6.333333333333329" prefWidth="10.666666666666668" />
-                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.3333333333333" minWidth="10.0" prefWidth="283.3333333333333" />
-                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.3333282470703" minWidth="10.0" prefWidth="97.66668701171875" />
-                           </columnConstraints>
-                           <rowConstraints>
-                               <RowConstraints />
-                               <RowConstraints maxHeight="24.666666666666668" minHeight="5.0" prefHeight="24.666666666666668" />
-                               <RowConstraints maxHeight="35.33333333333333" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-                               <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                               <RowConstraints maxHeight="79.33334350585938" minHeight="10.0" prefHeight="31.666666666666657" vgrow="SOMETIMES" />
-                               <RowConstraints maxHeight="65.00001525878906" minHeight="10.0" prefHeight="30.666656494140625" vgrow="SOMETIMES" />
-                               <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="32.00001017252603" vgrow="SOMETIMES" />
-                           <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="28.666666666666657" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <Text fx:id="textSolarPanels" strokeType="OUTSIDE" strokeWidth="0.0" text="X Solar panels" wrappingWidth="260.13671684265137" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Text fx:id="inverterText" strokeType="OUTSIDE" strokeWidth="0.0" text="X Inverter " wrappingWidth="269.47008323669434" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Installation and material cost" wrappingWidth="266.1367702484131" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Text fx:id="meterAdjustmentText" strokeType="OUTSIDE" strokeWidth="0.0" text="(No meter adjusment needed)" wrappingWidth="268.1367702484131" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="270.8033962249756" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total" wrappingWidth="270.8033962249756" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vat 21%" wrappingWidth="264.13674008846283" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                        <Text fx:id="solarPanelPrice" strokeType="OUTSIDE" strokeWidth="0.0" text="€" wrappingWidth="94.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Text fx:id="inverterPrice" strokeType="OUTSIDE" strokeWidth="0.0" text="€" wrappingWidth="99.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Text fx:id="installationCost" strokeType="OUTSIDE" strokeWidth="0.0" text="€" wrappingWidth="97.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                        <Text fx:id="meterAdjustmentCost" strokeType="OUTSIDE" strokeWidth="0.0" text="€" wrappingWidth="96.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                        <Text fx:id="totalCost" strokeType="OUTSIDE" strokeWidth="0.0" text="€" wrappingWidth="98.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                        <Text fx:id="vatPrice" strokeType="OUTSIDE" strokeWidth="0.0" text="€" wrappingWidth="88.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                       </GridPane>
-                       <Separator prefWidth="200.0" GridPane.columnIndex="1" />
-                       <Separator prefWidth="200.0" />
-                       <GridPane GridPane.rowIndex="3">
-                           <columnConstraints>
-                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="314.99998474121094" minWidth="4.000000476837158" prefWidth="11.333322683970135" />
-                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="345.6666628519694" minWidth="10.0" prefWidth="282.66667731602985" />
-                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="191.0" minWidth="10.0" prefWidth="99.99997965494794" />
-                           </columnConstraints>
-                           <rowConstraints>
-                               <RowConstraints maxHeight="13.333312630653381" minHeight="4.6666566133499146" prefHeight="5.333333571751913" />
-                               <RowConstraints maxHeight="27.000009934107464" minHeight="4.666648228963211" prefHeight="20.66664822896321" vgrow="SOMETIMES" />
-                               <RowConstraints maxHeight="37.33335749308268" minHeight="0.0" prefHeight="20.000018437703453" vgrow="SOMETIMES" />
-                               <RowConstraints maxHeight="27.33333333333333" minHeight="5.333309173583977" prefHeight="22.00002034505208" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total including VAT" wrappingWidth="281.9999899864197" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Estimated energy production" wrappingWidth="276.9999899864197" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                           <Text fx:id="totalIncludingVatPrice" strokeType="OUTSIDE" strokeWidth="0.0" text="€" wrappingWidth="90.00000238418579" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                           <Separator prefWidth="200.0" />
-                           <Text fx:id="estimatedEnergyProduction" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="93.99999761581421" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                           <Separator prefWidth="200.0" GridPane.columnIndex="2" />
-                           <Separator prefWidth="200.0" GridPane.columnIndex="1" />
-                       </GridPane>
-                   </GridPane>
-               </center>
-            </BorderPane>
-         </content>
-      </Tab>
-   </tabs>
+<TabPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="re.project.solarpanel.HelloController">
+    <Tab text="QuotationCreationTab">
+        <fx:include fx:id="quotationCalculationTab" source="QuotationCreationScreen.fxml"/>
+    </Tab>
+    <Tab text="Untitled Tab">
+        <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0"/>
+        </content>
+    </Tab>
 </TabPane>

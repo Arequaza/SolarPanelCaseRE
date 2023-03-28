@@ -1,10 +1,12 @@
 package re.project.solarpanel;
 
+import javafx.scene.AmbientLight;
+
 public class QuotationCalculation {
     public static final int productionPerPanel = 405;
     public static final int priceOfOnePanel = 200;
     public static final int sizeOfPanelLengthMM = 1754;
-    public static final int sizeSizeOfPanelWidthMM = 1096;
+    public static final int sizeOfPanelWidthMM = 1096;
     public static final int inverterSB2000Price = 400;
     public static final int inverterSB5000Price = 600;
     public static final int inverterSB6000Price = 800;
@@ -22,15 +24,23 @@ public class QuotationCalculation {
         return amountOfPanels * productionPerPanel;
     }
 
+    public static int placeForNumberOfPanels(int roofLength, int roofWidth) {
+        int fitInLength = roofLength / sizeOfPanelLengthMM;
+        int fitInWidth = roofWidth / sizeOfPanelWidthMM;
+        return fitInLength * fitInWidth;
+    }
+
     public static int getInstallationPrice(int amountOfPanels) {
         return installationFixedPrice + installationPricePerPanel * amountOfPanels;
     }
 
-    public static boolean needMeterAdjustment(int amountOfEnergy) {
-        return amountOfEnergy >= 6000;
+    public static boolean needMeterAdjustment(int amountOfPanels) {
+        return productionOfAllSolarPanels(amountOfPanels) >= 6000;
     }
 
-    public static String whichInverter(int amountOfEnergy) {
+    public static String whichInverter(int amountOfPanels) {
+        int amountOfEnergy = productionOfAllSolarPanels(amountOfPanels);
+
         if (amountOfEnergy < 2000) {
             return "SB2000";
         } else if (amountOfEnergy < 5000) {
@@ -53,6 +63,25 @@ public class QuotationCalculation {
             case "SB12000" -> inverterSB12000Price;
             default -> 0;
         };
+    }
+
+    public static int totalPriceNoVAT(int amountOfSolarPanels, boolean meterAdjustment) {
+        int totalPrice = getPriceOfSolarPanels(amountOfSolarPanels);
+        totalPrice += priceOfInverter(whichInverter(amountOfSolarPanels));
+        totalPrice += getInstallationPrice(amountOfSolarPanels);
+        if (meterAdjustment) {
+            totalPrice += meterAdjustmentPrice;
+        }
+
+        return totalPrice;
+    }
+
+    public static int vatPrice(int amountOfPanels, boolean meterAdjustment) {
+        return (int) (totalPriceNoVAT(amountOfPanels, meterAdjustment) * 0.21);
+    }
+
+    public static int totalPriceWithVAT(int amountOfPanels, boolean meterAdjustment) {
+        return totalPriceNoVAT(amountOfPanels, meterAdjustment) + vatPrice(amountOfPanels, meterAdjustment);
     }
 
 

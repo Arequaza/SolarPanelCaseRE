@@ -3,12 +3,14 @@ package re.project.solarpanel;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
 public class QuotationCreationController {
     public Button calcButton;
+    public TextField roofWidthInput;
+    public TextField roofLengthInput;
     public TextField amountSolarPanelsInput;
-    public TextField roofAreaInput;
     public TextField consumptionInput;
     public CheckBox meterAdjustmentCheckBox;
     public Text textSolarPanels;
@@ -22,16 +24,59 @@ public class QuotationCreationController {
     public Text vatPrice;
     public Text totalIncludingVatPrice;
     public Text estimatedEnergyProduction;
+    public TextField telephoneNumberInput;
+    public TextField emailAddressInput;
+    public TextField nameCustomerInput;
+    public Text warningText;
 
     public void calcButtonPress() {
         if (amountSolarPanelsInput.getText().isEmpty()) {
-
+            int amountOfSolarPanels = getPanelsFittingOnRoof();
+            generateText(amountOfSolarPanels);
         } else {
             int amountOfSolarPanels = Integer.parseInt(amountSolarPanelsInput.getText());
-            int productionEnergy = QuotationCalculation.productionOfAllSolarPanels(amountOfSolarPanels);
-            textSolarPanels.setText(amountOfSolarPanels + " Solar Panels");
-            solarPanelPrice.setText("€ " + QuotationCalculation.getPriceOfSolarPanels(amountOfSolarPanels));
-
+            if (amountOfSolarPanels <= getPanelsFittingOnRoof()) {
+                generateText(amountOfSolarPanels);
+            }
         }
     }
+
+    public void onCreateButtonPress() {
+    }
+
+    public void cancelButtonPress() {
+    }
+
+    private int getPanelsFittingOnRoof() {
+        int roofLength = Integer.parseInt(roofLengthInput.getText());
+        int roofWidth = Integer.parseInt(roofWidthInput.getText());
+
+        return QuotationCalculation.placeForNumberOfPanels(roofLength, roofWidth);
+    }
+
+    private void generateText(int amountOfSolarPanels) {
+        textSolarPanels.setText(amountOfSolarPanels + " Solar Panels");
+        solarPanelPrice.setText("€ " + QuotationCalculation.getPriceOfSolarPanels(amountOfSolarPanels));
+        inverterText.setText("1 " + QuotationCalculation.whichInverter(amountOfSolarPanels));
+        inverterPrice.setText("€ " + QuotationCalculation.priceOfInverter(QuotationCalculation.whichInverter(amountOfSolarPanels)));
+        installationCost.setText("€ " + QuotationCalculation.getInstallationPrice(amountOfSolarPanels));
+        if (meterAdjustmentCheckBox.isSelected()) {
+            meterAdjustmentText.setText("Meter adjustment");
+            meterAdjustmentCost.setText("€ " + QuotationCalculation.meterAdjustmentPrice);
+            warningText.setText("");
+        } else {
+            if (QuotationCalculation.needMeterAdjustment(amountOfSolarPanels)) {
+                warningText.setText("! Might need meter adjustment");
+            } else {
+                warningText.setText("");
+            }
+        }
+        totalCost.setText("€ " + QuotationCalculation.totalPriceNoVAT(amountOfSolarPanels, meterAdjustmentCheckBox.isSelected()));
+        vatPrice.setText("€ " + QuotationCalculation.vatPrice(amountOfSolarPanels, meterAdjustmentCheckBox.isSelected()));
+        totalIncludingVatPrice.setText("€ " + QuotationCalculation.totalPriceWithVAT(amountOfSolarPanels, meterAdjustmentCheckBox.isSelected()));
+        estimatedEnergyProduction.setText(QuotationCalculation.productionOfAllSolarPanels(amountOfSolarPanels) + " WAT");
+
+    }
+
+
 }

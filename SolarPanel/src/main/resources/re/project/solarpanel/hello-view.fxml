@@ -2,17 +2,13 @@
 
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.layout.BorderPane?>
-
 
 <TabPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
          fx:controller="re.project.solarpanel.HelloController">
     <Tab text="QuotationCreationTab">
-        <fx:include fx:id="quotationCalculationTab" source="QuotationCreationScreen.fxml"/>
+        <fx:include fx:id="quotationCreationTab" source="QuotationCreationScreen.fxml"/>
     </Tab>
-    <Tab text="Untitled Tab">
-        <content>
-            <BorderPane prefHeight="200.0" prefWidth="200.0"/>
-        </content>
+    <Tab text="OpenQuotations">
+        <fx:include fx:id="openQuotationOverview" source="Open-quotation-overview.fxml"/>
     </Tab>
 </TabPane>

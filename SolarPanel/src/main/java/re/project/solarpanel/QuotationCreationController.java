@@ -3,8 +3,9 @@ package re.project.solarpanel;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+
+import java.time.LocalDateTime;
 
 public class QuotationCreationController {
     public Button calcButton;
@@ -29,6 +30,8 @@ public class QuotationCreationController {
     public TextField nameCustomerInput;
     public Text warningText;
 
+    public HelloController helloController = new HelloController();
+
     public void calcButtonPress() {
         if (amountSolarPanelsInput.getText().isEmpty()) {
             int amountOfSolarPanels = getPanelsFittingOnRoof();
@@ -42,9 +45,22 @@ public class QuotationCreationController {
     }
 
     public void onCreateButtonPress() {
+        if (!amountSolarPanelsInput.getText().isEmpty()) {
+            String nameCustomer = nameCustomerInput.getText();
+            int amountSolarPanels = Integer.parseInt(amountSolarPanelsInput.getText());
+            String inverter = QuotationCalculation.whichInverter(amountSolarPanels);
+            boolean meterAdjustMent = meterAdjustmentCheckBox.isSelected();
+            int totalPriceWithVat = QuotationCalculation.totalPriceWithVAT(amountSolarPanels, meterAdjustMent);
+            Quotation quotation = new Quotation(nameCustomer,amountSolarPanels,inverter,meterAdjustMent,totalPriceWithVat, LocalDateTime.now());
+            DataSaver.addQuotationToList(quotation);
+            OpenQuotationOverview.QUOTATION_OVERVIEW.addNewItem(quotation);
+        } else {
+            warningText.setText("There is no specified amount of solar panels!");
+        }
     }
 
     public void cancelButtonPress() {
+
     }
 
     private int getPanelsFittingOnRoof() {
@@ -77,6 +93,8 @@ public class QuotationCreationController {
         estimatedEnergyProduction.setText(QuotationCalculation.productionOfAllSolarPanels(amountOfSolarPanels) + " WAT");
 
     }
+
+
 
 
 }

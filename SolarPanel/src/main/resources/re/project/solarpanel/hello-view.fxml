@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.*?>
 
-<TabPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-         fx:controller="re.project.solarpanel.HelloController">
-    <Tab text="QuotationCreationTab">
-        <fx:include fx:id="quotationCreationTab" source="QuotationCreationScreen.fxml"/>
+<TabPane fx:id="mainTabPane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="re.project.solarpanel.HelloController">
+    <Tab fx:id="quotationCreation" text="QuotationCreationTab">
+        <fx:include fx:id="quotationCreationTab" source="QuotationCreationScreen.fxml" />
     </Tab>
-    <Tab text="OpenQuotations">
-        <fx:include fx:id="openQuotationOverview" source="Open-quotation-overview.fxml"/>
+    <Tab fx:id="quotationOverview" onSelectionChanged="#openQuotationOverview" text="OpenQuotations">
+        <fx:include fx:id="openQuotationOverview" source="Open-quotation-overview.fxml" />
     </Tab>
 </TabPane>

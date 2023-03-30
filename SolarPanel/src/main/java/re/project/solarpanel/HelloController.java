@@ -1,14 +1,19 @@
 package re.project.solarpanel;
 
-
-import javafx.fxml.FXML;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
 
-/*
-This class is the class used for the quotation making page of the consultant
- */
 public class HelloController {
     
     public BorderPane openQuotationOverview;
     public BorderPane quotationCreationTab;
+    public TabPane mainTabPane;
+    public Tab quotationCreation;
+    public Tab quotationOverview;
+
+
+    public void openQuotationOverview() {
+
+    }
 }

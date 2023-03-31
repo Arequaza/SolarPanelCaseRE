@@ -16,7 +16,6 @@ public class OpenQuotationOverview {
     public static final OpenQuotationOverview QUOTATION_OVERVIEW = new OpenQuotationOverview();
 
     public OpenQuotationOverview() {
-
     }
 
     @FXML
@@ -39,6 +38,11 @@ public class OpenQuotationOverview {
     public void addNewItem(Quotation quotation) {
         CustomHBoxCell customHBoxCell = new CustomHBoxCell(quotation);
         observableList.add(customHBoxCell);
+    }
+
+    public void approveButtonClick(Quotation quotation, int idCell) {
+        DataSaver.addApprovedQuotation(quotation);
+        observableList.remove(idCell - 1);
     }
 
 

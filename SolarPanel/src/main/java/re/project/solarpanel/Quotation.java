@@ -45,4 +45,8 @@ public class Quotation {
     public boolean isConfirmed() {
         return confirmed;
     }
+
+    public LocalDateTime getDateCreated() {
+        return dateCreated;
+    }
 }

@@ -14,10 +14,15 @@ public class DataSaver {
 
     public static void addApprovedQuotation(Quotation quotation) {
         listOfQuotations.remove(quotation);
+        quotation.confirmQuotation();
         approvedQuotations.add(quotation);
     }
 
     public static ArrayList<Quotation> getListOfQuotations() {
         return listOfQuotations;
+    }
+
+    public static ArrayList<Quotation> getApprovedQuotations() {
+        return approvedQuotations;
     }
 }

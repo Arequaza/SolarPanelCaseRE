@@ -10,6 +10,7 @@ public class Quotation {
     private int totalPriceWithVAT;
     private boolean confirmed;
     private LocalDateTime dateCreated;
+    private LocalDateTime datePlanned;
 
     public Quotation(String nameCustomer, int amountSolarPanels, String inverter, boolean meterAdjustment, int totalPriceWithVAT, LocalDateTime dateCreated) {
         this.nameCustomer = nameCustomer;
@@ -44,6 +45,18 @@ public class Quotation {
 
     public boolean isConfirmed() {
         return confirmed;
+    }
+
+    public void confirmQuotation() {
+        confirmed = true;
+    }
+
+    public void setDatePlanned(LocalDateTime datePlanned) {
+        this.datePlanned = datePlanned;
+    }
+
+    public LocalDateTime getDatePlanned() {
+        return datePlanned;
     }
 
     public LocalDateTime getDateCreated() {

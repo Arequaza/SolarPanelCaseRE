@@ -9,4 +9,7 @@
     <Tab fx:id="quotationOverview" onSelectionChanged="#openQuotationOverview" text="OpenQuotations">
         <fx:include fx:id="openQuotationOverview" source="Open-quotation-overview.fxml" />
     </Tab>
+    <Tab text="ToBePlannedOverview">
+        <fx:include source="order-to-be-planned-overview.fxml"/>
+    </Tab>
 </TabPane>

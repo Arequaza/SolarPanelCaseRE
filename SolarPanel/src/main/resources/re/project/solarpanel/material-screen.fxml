@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="re.project.solarpanel.controllers.MaterialsScreenController">
+   <top>
+       <GridPane prefHeight="70.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+           <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="0.0" prefWidth="11.0" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="475.0" minWidth="0.0" prefWidth="124.0" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="440.0" minWidth="10.0" prefWidth="155.0" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="408.0" minWidth="10.0" prefWidth="155.0" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="408.0" minWidth="10.0" prefWidth="156.0" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints maxHeight="44.0" minHeight="2.0" prefHeight="15.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+           <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name Customer" wrappingWidth="127.13671875" />
+               <Text fx:id="nameCustomerText" strokeType="OUTSIDE" strokeWidth="0.0" text="-" GridPane.rowIndex="1" />
+           </GridPane>
+           <GridPane GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address Customers" />
+               <Text fx:id="addressCustomerText" strokeType="OUTSIDE" strokeWidth="0.0" text="-" GridPane.rowIndex="1" />
+           </GridPane>
+           <GridPane GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone Customer" wrappingWidth="174.13671875" />
+               <Text fx:id="telephoneCustomerText" strokeType="OUTSIDE" strokeWidth="0.0" text="-" GridPane.rowIndex="1" />
+           </GridPane>
+           <GridPane GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date PLanned" />
+               <Text fx:id="datePlannedText" strokeType="OUTSIDE" strokeWidth="0.0" text="-" GridPane.rowIndex="1" />
+           </GridPane>
+       </GridPane>
+   </top>
+   <center>
+       <GridPane prefHeight="309.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+           <columnConstraints>
+               <ColumnConstraints maxWidth="188.0" minWidth="17.0" prefWidth="17.0" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="563.0" minWidth="10.0" prefWidth="563.0" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.0" minWidth="10.0" prefWidth="20.0" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints maxHeight="105.0" minHeight="0.0" prefHeight="54.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="315.0" minHeight="10.0" prefHeight="236.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="108.0" minHeight="5.0" prefHeight="39.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+           <Separator prefWidth="200.0" GridPane.columnIndex="1" />
+           <Separator prefWidth="200.0" />
+           <Separator prefWidth="200.0" GridPane.columnIndex="2" />
+           <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                   <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                   <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                   <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+                   <RowConstraints maxHeight="198.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
+                   <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item" wrappingWidth="262.13671875" />
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Amount" GridPane.columnIndex="1" />
+               <Separator prefWidth="200.0" GridPane.rowIndex="1" />
+               <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Solar Panels" GridPane.rowIndex="2" />
+               <Text fx:id="inverterTypeText" strokeType="OUTSIDE" strokeWidth="0.0" text="Inverter" GridPane.rowIndex="3" />
+               <Text fx:id="inverterAmountText" strokeType="OUTSIDE" strokeWidth="0.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               <Text fx:id="phaseConnectionText" strokeType="OUTSIDE" strokeWidth="0.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3 Phase connection" GridPane.rowIndex="4" />
+               <Label fx:id="solarPanelLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+           </GridPane>
+       </GridPane>
+   </center>
+</BorderPane>

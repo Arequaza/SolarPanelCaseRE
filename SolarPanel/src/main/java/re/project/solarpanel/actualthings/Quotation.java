@@ -24,6 +24,20 @@ public class Quotation {
         confirmed = false;
     }
 
+    public Quotation(String nameCustomer, int amountSolarPanels, String inverter, boolean meterAdjustment, int totalPriceWithVAT, boolean confirmed, LocalDateTime dateCreated, LocalDate datePlanned) {
+        this.nameCustomer = nameCustomer;
+        this.amountSolarPanels = amountSolarPanels;
+        this.inverter = inverter;
+        this.meterAdjustment = meterAdjustment;
+        this.totalPriceWithVAT = totalPriceWithVAT;
+        this.confirmed = confirmed;
+        this.dateCreated = dateCreated;
+        this.datePlanned = datePlanned;
+    }
+
+    public Quotation() {
+    }
+
     public String getNameCustomer() {
         return nameCustomer;
     }

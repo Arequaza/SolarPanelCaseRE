@@ -44,7 +44,7 @@ public class CustomHBoxCell extends HBox{
         approveButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                OpenQuotationOverview.QUOTATION_OVERVIEW.approveButtonClick(Integer.parseInt(idLabel.getText()));
+                OpenQuotationOverview.QUOTATION_OVERVIEW.approveButtonClick(quotation);
             }
         });
 

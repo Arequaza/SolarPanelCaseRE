@@ -25,6 +25,10 @@ public class InstallationTeam {
         quotationsToDo.add(quotation);
     }
 
+    public void addMemberToTeam(Installer installer) {
+        memberInstallers.add(installer);
+    }
+
     public ArrayList<Quotation> getQuotationsToDo() {
         return quotationsToDo;
     }
@@ -33,5 +37,7 @@ public class InstallationTeam {
         return name;
     }
 
-
+    public ArrayList<Installer> getMemberInstallers() {
+        return memberInstallers;
+    }
 }

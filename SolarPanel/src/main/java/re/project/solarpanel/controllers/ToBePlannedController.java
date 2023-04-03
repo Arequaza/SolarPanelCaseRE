@@ -39,8 +39,7 @@ public class ToBePlannedController {
         toBePlannedObservableList.add(toBePlannedOverviewHBox);
     }
 
-    public void planButtonClick(int idQuotation) {
-        Quotation quotation = toBePlannedObservableList.get(idQuotation - 1).getQuotation();
+    public void planButtonClick(Quotation quotation) {
         PlanningController.planQuotation(quotation);
     }
 

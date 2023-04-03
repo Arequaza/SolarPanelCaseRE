@@ -43,10 +43,14 @@ public class OpenQuotationOverview {
         observableList.add(customHBoxCell);
     }
 
-    public void approveButtonClick(int idCell) {
-        Quotation quotation = observableList.get(idCell - 1).getQuotation();
+    public void approveButtonClick(Quotation quotation) {
         DataSaver.addApprovedQuotation(quotation);
-        observableList.remove(idCell - 1);
+        for (int i = 0; i < observableList.size(); i++) {
+            if (observableList.get(i).getQuotation().equals(quotation)) {
+                observableList.remove(i);
+                break;
+            }
+        }
         ToBePlannedController.addNewItemToBePlanned(quotation);
     }
 

@@ -1,8 +1,10 @@
 package re.project.solarpanel.helperclasses;
 
 import re.project.solarpanel.actualthings.InstallationTeam;
+import re.project.solarpanel.actualthings.Installer;
 import re.project.solarpanel.actualthings.Quotation;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class DataSaver {
@@ -20,7 +22,7 @@ public class DataSaver {
         approvedQuotations.add(quotation);
     }
 
-    public static void addQuotationToTeam(String nameOfTeam, Quotation quotation) {
+    public static void addQuotationToTeam(String nameOfTeam, Quotation quotation, LocalDate localDate) {
         for (InstallationTeam installationTeam: installationTeams) {
             if (installationTeam.getName().equalsIgnoreCase(nameOfTeam)) {
                 installationTeam.addNewJob(quotation);
@@ -43,5 +45,25 @@ public class DataSaver {
 
     public static ArrayList<InstallationTeam> getInstallationTeams() {
         return installationTeams;
+    }
+
+    public static void addInstallerToTeam(String name, Installer installer) {
+        for (InstallationTeam installationTeam : installationTeams) {
+            if (installationTeam.getName().equalsIgnoreCase(name)) {
+                installationTeam.addMemberToTeam(installer);
+            }
+        }
+    }
+
+    public static InstallationTeam getTeamOfMember(String name) {
+        for (InstallationTeam installationTeam: installationTeams) {
+            for (Installer installer: installationTeam.getMemberInstallers()) {
+                if (name.equalsIgnoreCase(installer.getName())) {
+                    return installationTeam;
+                }
+            }
+        }
+
+        return null;
     }
 }

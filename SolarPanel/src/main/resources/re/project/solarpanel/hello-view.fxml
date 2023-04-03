@@ -15,4 +15,10 @@
     <Tab text="planningPage">
         <fx:include source="planning-page.fxml"/>
     </Tab>
+    <Tab text="installerJobOverview">
+        <fx:include source="installer-jobs-overview.fxml"/>
+    </Tab>
+    <Tab text="materialPage">
+        <fx:include source="material-screen.fxml"/>
+    </Tab>
 </TabPane>

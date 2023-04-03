@@ -36,7 +36,7 @@ public class DateHBoxCell extends HBox {
                     //reset the team list
                         PlanningController.PLANNING_CONTROLLER.dateUnselected();
                     }
-                    PlanningController.PLANNING_CONTROLLER.dateSelected(LocalDate.now());
+                    PlanningController.PLANNING_CONTROLLER.dateSelected(localDate);
                 }else {
                     PlanningController.PLANNING_CONTROLLER.dateUnselected();
                 }

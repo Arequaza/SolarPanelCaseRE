@@ -4,12 +4,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ListView;
-import re.project.solarpanel.actualthings.InstallationTeam;
-import re.project.solarpanel.actualthings.Installer;
-import re.project.solarpanel.actualthings.Quotation;
-import re.project.solarpanel.customhboxes.DateHBoxCell;
-import re.project.solarpanel.customhboxes.OrderInformationHBox;
-import re.project.solarpanel.customhboxes.TeamBoxCell;
+import re.project.solarpanel.actualthings.*;
+import re.project.solarpanel.customhboxes.*;
 import re.project.solarpanel.helperclasses.DataSaver;
 
 import java.time.LocalDate;
@@ -80,13 +76,13 @@ public class PlanningController {
             // add date to quotation
             quotationToPlan.setDatePlanned(chosenLocalDate);
             // add quotation to team
-            DataSaver.addQuotationToTeam(selectedTeam.getName(), quotationToPlan);
-            // remove quotation from toBePlannedList
-            ToBePlannedController.removePlannedItem(quotationToPlan);
+            DataSaver.addQuotationToTeam(selectedTeam.getName(), quotationToPlan, chosenLocalDate);
             // clear everything
             dateUnselected();
             dateObservableList.remove(0, dateObservableList.size());
             orderInformationHBoxObservableList.remove(0, orderInformationHBoxObservableList.size());
+            ToBePlannedController.removePlannedItem(quotationToPlan);
+            InstallerJobOverviewController.updateOverview();
         }
     }
 

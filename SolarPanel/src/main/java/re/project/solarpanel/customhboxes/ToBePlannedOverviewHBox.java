@@ -35,7 +35,7 @@ public class ToBePlannedOverviewHBox extends HBox {
         planButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                ToBePlannedController.TO_BE_PLANNED_CONTROLLER.planButtonClick(Integer.parseInt(idLabel.getText()));
+                ToBePlannedController.TO_BE_PLANNED_CONTROLLER.planButtonClick(quotation);
             }
         });
 

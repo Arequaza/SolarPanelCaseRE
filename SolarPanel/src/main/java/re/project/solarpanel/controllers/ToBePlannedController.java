@@ -1,8 +1,11 @@
-package re.project.solarpanel;
+package re.project.solarpanel.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
+import re.project.solarpanel.helperclasses.DataSaver;
+import re.project.solarpanel.actualthings.Quotation;
+import re.project.solarpanel.customhboxes.ToBePlannedOverviewHBox;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -31,12 +34,22 @@ public class ToBePlannedController {
         toBePlannedList.setItems(toBePlannedObservableList);
     }
 
-    public void addNewItemToBePlanned(Quotation quotation) {
+    public static void addNewItemToBePlanned(Quotation quotation) {
         ToBePlannedOverviewHBox toBePlannedOverviewHBox = new ToBePlannedOverviewHBox(quotation);
         toBePlannedObservableList.add(toBePlannedOverviewHBox);
     }
 
-    public void planButtonClick(Quotation quotation) {
+    public void planButtonClick(int idQuotation) {
+        Quotation quotation = toBePlannedObservableList.get(idQuotation - 1).getQuotation();
+        PlanningController.planQuotation(quotation);
+    }
 
+    public static void removePlannedItem(Quotation quotation) {
+        for (int i = 0; i < toBePlannedObservableList.size(); i++) {
+            if (toBePlannedObservableList.get(i).getQuotation().equals(quotation)) {
+                toBePlannedObservableList.remove(i);
+                break;
+            }
+        }
     }
 }

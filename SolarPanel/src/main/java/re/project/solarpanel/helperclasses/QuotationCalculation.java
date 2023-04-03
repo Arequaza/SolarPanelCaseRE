@@ -1,6 +1,4 @@
-package re.project.solarpanel;
-
-import javafx.scene.AmbientLight;
+package re.project.solarpanel.helperclasses;
 
 public class QuotationCalculation {
     public static final int productionPerPanel = 405;

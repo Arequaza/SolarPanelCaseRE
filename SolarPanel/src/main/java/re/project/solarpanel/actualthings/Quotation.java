@@ -1,5 +1,6 @@
-package re.project.solarpanel;
+package re.project.solarpanel.actualthings;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Quotation {
@@ -10,7 +11,7 @@ public class Quotation {
     private int totalPriceWithVAT;
     private boolean confirmed;
     private LocalDateTime dateCreated;
-    private LocalDateTime datePlanned;
+    private LocalDate datePlanned;
 
     public Quotation(String nameCustomer, int amountSolarPanels, String inverter, boolean meterAdjustment, int totalPriceWithVAT, LocalDateTime dateCreated) {
         this.nameCustomer = nameCustomer;
@@ -51,11 +52,11 @@ public class Quotation {
         confirmed = true;
     }
 
-    public void setDatePlanned(LocalDateTime datePlanned) {
+    public void setDatePlanned(LocalDate datePlanned) {
         this.datePlanned = datePlanned;
     }
 
-    public LocalDateTime getDatePlanned() {
+    public LocalDate getDatePlanned() {
         return datePlanned;
     }
 

@@ -6,10 +6,13 @@
     <Tab fx:id="quotationCreation" text="QuotationCreationTab">
         <fx:include fx:id="quotationCreationTab" source="QuotationCreationScreen.fxml" />
     </Tab>
-    <Tab fx:id="quotationOverview" onSelectionChanged="#openQuotationOverview" text="OpenQuotations">
+    <Tab fx:id="quotationOverview" text="OpenQuotations">
         <fx:include fx:id="openQuotationOverview" source="Open-quotation-overview.fxml" />
     </Tab>
     <Tab text="ToBePlannedOverview">
         <fx:include source="order-to-be-planned-overview.fxml"/>
+    </Tab>
+    <Tab text="planningPage">
+        <fx:include source="planning-page.fxml"/>
     </Tab>
 </TabPane>

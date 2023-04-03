@@ -1,9 +1,13 @@
-package re.project.solarpanel;
+package re.project.solarpanel.controllers;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import re.project.solarpanel.helperclasses.DataSaver;
+import re.project.solarpanel.HelloController;
+import re.project.solarpanel.actualthings.Quotation;
+import re.project.solarpanel.helperclasses.QuotationCalculation;
 
 import java.time.LocalDateTime;
 

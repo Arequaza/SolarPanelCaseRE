@@ -1,4 +1,4 @@
-package re.project.solarpanel;
+package re.project.solarpanel.customhboxes;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -6,8 +6,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import re.project.solarpanel.controllers.ToBePlannedController;
+import re.project.solarpanel.helperclasses.DataSaver;
+import re.project.solarpanel.actualthings.Quotation;
 
-import java.nio.Buffer;
 import java.time.format.DateTimeFormatter;
 
 public class ToBePlannedOverviewHBox extends HBox {
@@ -33,11 +35,15 @@ public class ToBePlannedOverviewHBox extends HBox {
         planButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-
+                ToBePlannedController.TO_BE_PLANNED_CONTROLLER.planButtonClick(Integer.parseInt(idLabel.getText()));
             }
         });
 
 
         this.getChildren().addAll(idLabel, dateLabel, nameLabel, planButton);
+    }
+
+    public Quotation getQuotation() {
+        return quotation;
     }
 }

@@ -1,4 +1,4 @@
-package re.project.solarpanel;
+package re.project.solarpanel.customhboxes;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -6,6 +6,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import re.project.solarpanel.helperclasses.DataSaver;
+import re.project.solarpanel.controllers.OpenQuotationOverview;
+import re.project.solarpanel.actualthings.Quotation;
 
 import java.time.format.DateTimeFormatter;
 

@@ -1,9 +1,12 @@
-package re.project.solarpanel;
+package re.project.solarpanel.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import re.project.solarpanel.helperclasses.DataSaver;
+import re.project.solarpanel.actualthings.Quotation;
+import re.project.solarpanel.customhboxes.CustomHBoxCell;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -44,7 +47,7 @@ public class OpenQuotationOverview {
         Quotation quotation = observableList.get(idCell - 1).getQuotation();
         DataSaver.addApprovedQuotation(quotation);
         observableList.remove(idCell - 1);
-        ToBePlannedController.TO_BE_PLANNED_CONTROLLER.addNewItemToBePlanned(quotation);
+        ToBePlannedController.addNewItemToBePlanned(quotation);
     }
 
 

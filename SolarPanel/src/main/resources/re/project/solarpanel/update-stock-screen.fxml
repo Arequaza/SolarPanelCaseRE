@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="re.project.solarpanel.controllers.UpdateStockController">
+   <left>
+       <GridPane BorderPane.alignment="CENTER">
+           <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.33331298828125" minWidth="10.0" prefWidth="16.666666666666668" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.3333333333333" minWidth="10.0" prefWidth="261.3333333333333" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.33331298828122" minWidth="10.0" prefWidth="23.33331298828125" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints maxHeight="129.33331298828125" minHeight="0.0" prefHeight="42.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="368.66663614908856" minHeight="10.0" prefHeight="337.3333333333333" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="51.333343505859375" minHeight="6.000030517578125" prefHeight="19.999979654947936" vgrow="SOMETIMES" />
+           </rowConstraints>
+           <ListView fx:id="itemsAddedList" prefHeight="307.0" prefWidth="261.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         <GridPane GridPane.columnIndex="1">
+           <columnConstraints>
+             <ColumnConstraints hgrow="SOMETIMES" maxWidth="212.33331298828125" minWidth="10.0" prefWidth="187.0" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.6666488647461" minWidth="10.0" prefWidth="75.0" />
+           </columnConstraints>
+           <rowConstraints>
+             <RowConstraints maxHeight="16.333328247070312" minHeight="6.333327770233154" prefHeight="6.333327770233154" vgrow="SOMETIMES" />
+             <RowConstraints maxHeight="35.666672229766846" minHeight="10.0" prefHeight="35.666672229766846" vgrow="SOMETIMES" />
+           </rowConstraints>
+            <children>
+               <Label text="Name Items" GridPane.rowIndex="1" />
+               <Label text="Amount" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            </children>
+         </GridPane>
+       </GridPane>
+   </left>
+   <right>
+       <GridPane prefHeight="400.0" prefWidth="283.0" BorderPane.alignment="CENTER">
+           <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="128.33334350585938" minHeight="10.0" prefHeight="69.00001525878906" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="198.99998474121094" minHeight="10.0" prefHeight="196.99998474121094" vgrow="SOMETIMES" />
+           </rowConstraints>
+           <GridPane prefHeight="103.0" prefWidth="283.0" GridPane.rowIndex="1">
+               <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="169.66667938232422" minWidth="10.0" prefWidth="169.66667938232422" />
+                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.33331298828125" minWidth="10.0" prefWidth="20.33332061767578" />
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <Button mnemonicParsing="false" onAction="#addButtonClick" prefHeight="25.0" prefWidth="58.0" text="Add" GridPane.columnIndex="2" />
+               <GridPane>
+                   <columnConstraints>
+                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                   </columnConstraints>
+                   <rowConstraints>
+                       <RowConstraints maxHeight="52.666664123535156" minHeight="10.0" prefHeight="18.000009218851723" vgrow="SOMETIMES" />
+                       <RowConstraints maxHeight="52.666664123535156" minHeight="10.0" prefHeight="23.666676839192707" vgrow="SOMETIMES" />
+                       <RowConstraints maxHeight="52.666664123535156" minHeight="10.0" prefHeight="39.33332316080728" vgrow="SOMETIMES" />
+                       <RowConstraints maxHeight="82.00000762939453" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                   </rowConstraints>
+                   <ChoiceBox fx:id="itemChooseBox" prefWidth="150.0" GridPane.rowIndex="2" />
+                   <Label prefHeight="17.0" prefWidth="79.0" text="Item" GridPane.rowIndex="1" />
+               </GridPane>
+           </GridPane>
+           <GridPane prefHeight="140.0" prefWidth="283.0">
+               <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.00001525878906" minWidth="10.0" prefWidth="266.00001525878906" />
+                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.3333740234375" minWidth="10.0" prefWidth="17.999984741210938" />
+               </columnConstraints>
+               <rowConstraints>
+                   <RowConstraints maxHeight="67.33333460489908" minHeight="10.0" prefHeight="33.33332824707031" vgrow="SOMETIMES" />
+                   <RowConstraints maxHeight="62.33333206176758" minHeight="4.333333333333336" prefHeight="26.000005086263016" vgrow="SOMETIMES" />
+                   <RowConstraints maxHeight="83.66666793823242" minHeight="10.0" prefHeight="40.66666158040364" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <TextField fx:id="amountInput" prefHeight="25.0" prefWidth="241.0" GridPane.rowIndex="2" />
+               <Label text="Amount" GridPane.rowIndex="1" />
+           </GridPane>
+           <GridPane GridPane.rowIndex="2">
+               <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.33331489562988" minWidth="10.0" prefWidth="92.66664632161458" />
+                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.00000286102295" minWidth="10.0" prefWidth="130.6666259765625" />
+                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="93.3333740234375" minWidth="10.0" prefWidth="61.3333740234375" />
+               </columnConstraints>
+               <rowConstraints>
+                   <RowConstraints maxHeight="61.66666030883789" minHeight="10.0" prefHeight="53.66664632161458" vgrow="SOMETIMES" />
+                   <RowConstraints maxHeight="115.00001335144043" minHeight="10.0" prefHeight="94.66667429606122" vgrow="SOMETIMES" />
+                   <RowConstraints maxHeight="76.66666412353516" minHeight="10.0" prefHeight="48.666659037272126" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <Button mnemonicParsing="false" onAction="#updateStockButtonClick" prefHeight="43.0" prefWidth="88.0" text="Update Stock" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+           </GridPane>
+       </GridPane>
+   </right>
+</BorderPane>

@@ -21,4 +21,10 @@
     <Tab text="materialPage">
         <fx:include source="material-screen.fxml"/>
     </Tab>
+    <Tab text="neededInventory">
+        <fx:include source="needed-inventory-screen.fxml"/>
+    </Tab>
+    <Tab text="updateStock">
+        <fx:include source="update-stock-screen.fxml"/>
+    </Tab>
 </TabPane>

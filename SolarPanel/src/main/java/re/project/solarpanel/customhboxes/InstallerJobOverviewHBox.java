@@ -24,7 +24,7 @@ public class InstallerJobOverviewHBox extends HBox {
         plannedDateLabel.setText(quotation.getDatePlanned().format(DateTimeFormatter.ofPattern("dd-MM")));
         plannedDateLabel.setMaxWidth(Double.MAX_VALUE);
         HBox.setHgrow(plannedDateLabel, Priority.ALWAYS);
-        this.setSpacing(25);
+        this.setSpacing(65);
 
         infoButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
